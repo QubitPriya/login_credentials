@@ -1,0 +1,159 @@
+{
+  "info": {
+    "_postman_id": "onboarding-api-collection",
+    "name": "Onboarding API",
+    "description": "Collection for testing Onboarding API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "health"
+          ]
+        },
+        "description": "Check if the server is running"
+      },
+      "response": []
+    },
+    {
+      "name": "Submit Onboarding - Male",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dateOfBirth\": \"1990-05-15\",\n  \"gender\": \"Male\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users/submit-onboarding",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "submit-onboarding"
+          ]
+        },
+        "description": "Submit user onboarding data (Male)"
+      },
+      "response": []
+    },
+    {
+      "name": "Submit Onboarding - Female",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Smith\",\n  \"dateOfBirth\": \"1995-08-20\",\n  \"gender\": \"Female\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users/submit-onboarding",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "submit-onboarding"
+          ]
+        },
+        "description": "Submit user onboarding data (Female)"
+      },
+      "response": []
+    },
+    {
+      "name": "Submit Onboarding - Other",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Alex\",\n  \"lastName\": \"Johnson\",\n  \"dateOfBirth\": \"1988-12-03\",\n  \"gender\": \"Other\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users/submit-onboarding",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "submit-onboarding"
+          ]
+        },
+        "description": "Submit user onboarding data (Other)"
+      },
+      "response": []
+    },
+    {
+      "name": "Submit Onboarding - Error (Missing Field)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dateOfBirth\": \"1990-05-15\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/users/submit-onboarding",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "users",
+            "submit-onboarding"
+          ]
+        },
+        "description": "Test error response - missing gender field"
+      },
+      "response": []
+    }
+  ]
+}
